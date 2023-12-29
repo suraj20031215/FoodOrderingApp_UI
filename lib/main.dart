@@ -1,4 +1,6 @@
-import 'package:demoo/home_page.dart';
+import 'package:demoo/screen/home_screen.dart';
+import 'package:demoo/widgets/bottom_navbar.dart';
+import 'package:demoo/screen/screen1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: BottomNavbar(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

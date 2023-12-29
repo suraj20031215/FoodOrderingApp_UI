@@ -1,29 +1,37 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+import '../all_featured.dart';
+
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 appBar: AppBar(
 
   title: const Center(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        SizedBox(height: 20,),
-        Text('DELIVERY TO',textScaleFactor: 0.7,style: TextStyle(color: Colors.red),),
-        Text('HayStreet, Perth'),
-        SizedBox(height: 20,)
-      ],
+    child: Padding(
+      padding: EdgeInsets.only(left: 50,top: 40),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+        //  SizedBox(height: 40,),
+          Text('DELIVERY TO',textScaleFactor: 0.7,style: TextStyle(color: Colors.red),),
+          Text('HayStreet, Perth',textScaleFactor: 0.9,),
+          SizedBox(height: 20,)
+        ],
+      ),
     ),
   ),
   actions: const [
@@ -35,8 +43,6 @@ appBar: AppBar(
 
   ],
 ),
-      
-
 
       body:SingleChildScrollView(
         child: Column(
@@ -61,7 +67,7 @@ appBar: AppBar(
         ),
             ),
         
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
@@ -69,11 +75,16 @@ appBar: AppBar(
                     child: Text('Featured\nPatners',textScaleFactor: 1.8,style: TextStyle(fontWeight: FontWeight.w600)),
 
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      child: Text('See all',textScaleFactor: 1.2,style: TextStyle(color: Colors.amber),),
-        
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const AllFeatured(),));
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        child: Text('See all',textScaleFactor: 1.2,style: TextStyle(color: Colors.amber),),
+
+                      ),
                     ),
                   ),
         
@@ -93,8 +104,8 @@ appBar: AppBar(
                                width:300,
                                child: Image.asset('assets/images/img_5.png'),
                              ),
-                              Text('Krispy Creme',textScaleFactor: 1.3,),
-                              Text('Colarodo, San Franci'),
+                              const Text('Krispy Creme',textScaleFactor: 1.3,),
+                              const Text('Colarodo, San Franci'),
                             ],
                           ),
                         ),
@@ -107,8 +118,8 @@ appBar: AppBar(
                            width:300,
                            child: Image.asset('assets/images/img_5.png'),
                          ),
-                         Text('Krispy Creme',textScaleFactor: 1.3,),
-                         Text('Colarodo, San Franci'),
+                         const Text('Krispy Creme',textScaleFactor: 1.3,),
+                         const Text('Colarodo, San Franci'),
                        ],
                      ),
                    ),
@@ -198,8 +209,9 @@ appBar: AppBar(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          width:370,
+                        Container(
+                          alignment:Alignment.center ,
+
                           child: Image.asset('assets/images/img_5.png'),
                         ),
                         Text("McDonald's",textScaleFactor: 1.3,),
@@ -210,7 +222,10 @@ appBar: AppBar(
 
 
             ]),
-      )
+      ),
+
+
+
     );
   }
 }
