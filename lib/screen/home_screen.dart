@@ -21,7 +21,7 @@ appBar: AppBar(
 
   title: const Center(
     child: Padding(
-      padding: EdgeInsets.only(left: 50,top: 40),
+      padding: EdgeInsets.only(left: 50,top: 30,bottom: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

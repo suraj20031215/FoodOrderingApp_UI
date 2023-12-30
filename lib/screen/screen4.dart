@@ -1,14 +1,15 @@
-import 'package:demoo/screen/screen2.dart';
+import 'package:demoo/screen/screen3.dart';
+import 'package:demoo/screen/signin_screen.dart';
 import 'package:flutter/material.dart';
 
-class Screenone extends StatefulWidget {
-  const Screenone({super.key});
+class Screenfour extends StatefulWidget {
+  const Screenfour({super.key});
 
   @override
-  State<Screenone> createState() => _ScreenoneState();
+  State<Screenfour> createState() => _ScreenfourState();
 }
 
-class _ScreenoneState extends State<Screenone> {
+class _ScreenfourState extends State<Screenfour> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,9 +17,9 @@ class _ScreenoneState extends State<Screenone> {
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/images/img_8.png")
-        )
+            image: DecorationImage(
+                image: AssetImage("assets/images/img_11.png")
+            )
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -31,8 +32,9 @@ class _ScreenoneState extends State<Screenone> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.amber[700],shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
                     onPressed: (){
-Navigator.push(context, MaterialPageRoute(builder: (context) => const Screentwo(),));
-                }, child: Text('GET STARTED',style: TextStyle(color: Colors.white),)),
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const SigninScreen(),));
+
+                    }, child: Text('GET STARTED',style: TextStyle(color: Colors.white),)),
               ),
             )
           ],

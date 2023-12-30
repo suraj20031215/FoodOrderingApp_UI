@@ -27,18 +27,18 @@ class _SearchScreenState extends State<SearchScreen> {
                   
                   border: OutlineInputBorder(borderSide: BorderSide(width: 1),borderRadius: BorderRadius.circular(10)),
                   hintText: 'Search on foodly ',
-                  prefixIcon: Icon(CupertinoIcons.search)
+                  prefixIcon: const Icon(CupertinoIcons.search)
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10),
+            const Padding(
+              padding: EdgeInsets.all(10),
               child: Text('Top Restaurants',textScaleFactor: 1.2,),
             ),
             Expanded(
               child: GridView.builder(
                 itemCount: 10,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemBuilder:(context, index) {
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemBuilder:(context, index) {
                 return   Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(

@@ -1,3 +1,4 @@
+import 'package:demoo/product_screen.dart';
 import 'package:flutter/material.dart';
 
 class AllFeatured extends StatefulWidget {
@@ -17,16 +18,21 @@ class _AllFeaturedState extends State<AllFeatured> {
       body: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemBuilder:(context, index) {
         return   Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width:500,
-                child: Image.asset('assets/images/img_5.png'),
-              ),
-              const Text('Krispy Creme',textScaleFactor: 1.3,),
-              const Text('Colarodo, San Franci'),
-            ],
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ProductScreen(),));
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width:500,
+                  child: Image.asset('assets/images/img_5.png'),
+                ),
+                const Text('Krispy Creme',textScaleFactor: 1.3,),
+                const Text('Colarodo, San Franci'),
+              ],
+            ),
           ),
         );
       }, ),

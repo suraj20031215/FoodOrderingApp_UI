@@ -1,10 +1,11 @@
 import 'package:demoo/screen/home_screen.dart';
-import 'package:demoo/screen/orders_screen.dart';
+
 import 'package:demoo/screen/search_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../screen/profile_screen.dart';
+import '../screen/orders/orders_screen.dart';
+import '../screen/profile/profile_screen.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
